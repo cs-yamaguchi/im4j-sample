@@ -21,7 +21,7 @@
 export LANG=ja_JP.UTF8
 
 # 変数設定
-BASE_PATH=/data/apl/product/shell/zbpk/im4j-test
+BASE_PATH=/tmp/im4j-test
 
 # スクリプトのパス
 SCRIPT_PATH=${BASE_PATH}/bin
@@ -30,7 +30,7 @@ SCRIPT_PATH=${BASE_PATH}/bin
 LIB_PATH=${BASE_PATH}/lib/*
 
 # JAVA
-JAVA=/opt/java/bin/java
+JAVA=/opt/jdk1.6.0_75/bin/java
 
 # Java Class Path
 CLASS_PATH=${SCRIPT_PATH}/:${LIB_PATH}

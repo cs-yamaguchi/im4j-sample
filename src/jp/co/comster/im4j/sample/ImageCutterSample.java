@@ -18,7 +18,9 @@ public class ImageCutterSample {
         File dest = new File(outimg);
 
         ConvertCmd cmd = new ConvertCmd();
-        cmd.setSearchPath("C:\\usr\\bin\\ImageMagick-6.9.2-7-portable-Q16-x86");
+//        cmd.setSearchPath("C:\\usr\\bin\\ImageMagick-6.9.2-7-portable-Q16-x86");
+      cmd.setSearchPath("/opt/st_benesse_ne_jp/ImageMagick/bin/");
+
 
         IMOperation op = new IMOperation();
         op.addImage(src.getAbsolutePath());
