@@ -1,6 +1,8 @@
 package jp.co.comster.im4j.sample;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.im4java.core.ConvertCmd;
 import org.im4java.core.IMOperation;
@@ -9,6 +11,8 @@ public class PhoteCardSample {
 
 
     public static void main(String[] args) throws Exception {
+
+		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
 
     	String basePath = System.getProperty("user.dir");
     	String inimg = basePath + "/img/icon_maitama.jpg";
@@ -38,7 +42,11 @@ public class PhoteCardSample {
         op.addImage(tmp1.getAbsolutePath());
         System.out.println(op.toString());
 
+        Date date;;
+        date = new Date();
+        System.out.println("Start Time = " + sdf.format(date));
         cmd.run(op);
+        System.out.println("End Time = " + sdf.format(new Date()) + "[" + (new Date().getTime() - date.getTime()) + "]" );
 
         //ImageMix
         op = new IMOperation();
@@ -51,7 +59,10 @@ public class PhoteCardSample {
         op.addImage(tmp2.getAbsolutePath());
         System.out.println(op.toString());
 
+        date = new Date();
+        System.out.println("Start Time = " + sdf.format(date));
         cmd.run(op);
+        System.out.println("End Time = " + sdf.format(new Date()) + "[" + (new Date().getTime() - date.getTime()) + "]" );
         tmp1.delete();
 
         //ImageString
@@ -67,7 +78,10 @@ public class PhoteCardSample {
       op.addImage(tmp1.getAbsolutePath());
         System.out.println(op.toString());
 
+        date = new Date();
+        System.out.println("Start Time = " + sdf.format(date));
         cmd.run(op);
+        System.out.println("End Time = " + sdf.format(new Date()) + "[" + (new Date().getTime() - date.getTime()) + "]" );
 
 
         //ImageString
@@ -83,7 +97,10 @@ public class PhoteCardSample {
       op.addImage(photefile.getAbsolutePath());
         System.out.println(op.toString());
 
+        date = new Date();
+        System.out.println("Start Time = " + sdf.format(date));
         cmd.run(op);
+        System.out.println("End Time = " + sdf.format(new Date()) + "[" + (new Date().getTime() - date.getTime()) + "]" );
 
         tmp1.delete();
         tmp2.delete();

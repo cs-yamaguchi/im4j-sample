@@ -1,6 +1,8 @@
 package jp.co.comster.im4j.sample;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.im4java.core.ConvertCmd;
 import org.im4java.core.IMOperation;
@@ -9,6 +11,8 @@ public class ImageCutterSample {
 
 
     public static void main(String[] args) throws Exception {
+
+		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
 
     	String basePath = System.getProperty("user.dir");
     	String inimg = basePath + "/img/icon_maitama.jpg";
@@ -41,7 +45,10 @@ public class ImageCutterSample {
         op.addImage(dest.getAbsolutePath());
         System.out.println(op.toString());
 
+        Date date = new Date();
+        System.out.println("Start Time = " + sdf.format(date));
         cmd.run(op);
+        System.out.println("End Time = " + sdf.format(new Date()) + "[" + (new Date().getTime() - date.getTime()) + "]" );
     }
 
 }

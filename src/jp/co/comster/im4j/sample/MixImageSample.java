@@ -1,6 +1,8 @@
 package jp.co.comster.im4j.sample;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.im4java.core.ConvertCmd;
 import org.im4java.core.IMOperation;
@@ -10,7 +12,9 @@ public class MixImageSample {
 
     public static void main(String[] args) throws Exception {
 
-    	String basePath = System.getProperty("user.dir");
+		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
+
+		String basePath = System.getProperty("user.dir");
     	String inimg = basePath + "/img/icon_maitama.jpg";
     	String miximg = basePath + "/img/flower-back0557.png";
     	String outimg = basePath + "/img/mix-out.jpg";
@@ -44,7 +48,10 @@ public class MixImageSample {
         op.addImage(dest.getAbsolutePath());
         System.out.println(op.toString());
 
+        Date date = new Date();
+        System.out.println("Start Time = " + sdf.format(date));
         cmd.run(op);
+        System.out.println("End Time = " + sdf.format(new Date()) + "[" + (new Date().getTime() - date.getTime()) + "]" );
     }
 
 }
