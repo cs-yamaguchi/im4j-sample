@@ -28,8 +28,8 @@ public class PhoteCardSample {
         File photefile = new File(img_final);
 
         ConvertCmd cmd = new ConvertCmd();
-//      cmd.setSearchPath("C:\\usr\\bin\\ImageMagick-6.9.2-7-portable-Q16-x86");
-        cmd.setSearchPath("/opt/st_benesse_ne_jp/ImageMagick/bin/");
+      cmd.setSearchPath("C:\\usr\\bin\\ImageMagick-6.9.2-7-portable-Q16-x86");
+//        cmd.setSearchPath("/opt/st_benesse_ne_jp/ImageMagick/bin/");
 
 
         //ImageCut
@@ -74,7 +74,7 @@ public class PhoteCardSample {
 //      op.font(basePath + "/font/MEIRYO.TTC"); // font
 //      op.fill("Black"); //font color
       op.fill("#8888ff"); //font color
-      op.draw("text 10,400 'BSH医院で生まれました'"); // location of text, actual text
+      op.draw("text 10,400 'サンプル医院で生まれました'"); // location of text, actual text
       op.addImage(tmp1.getAbsolutePath());
         System.out.println(op.toString());
 
